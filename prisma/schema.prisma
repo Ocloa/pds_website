@@ -1,0 +1,70 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model categories {
+  category_id Int     @id @default(autoincrement())
+  name        String?
+}
+
+model comments {
+  comment_id   Int       @id @default(autoincrement())
+  user_id      Int?
+  project_id   Int?
+  text         String?
+  commented_at DateTime? @db.Date
+}
+
+model contests {
+  contest_id Int       @id @default(autoincrement())
+  name       String?
+  start_date DateTime? @db.Date
+  end_date   DateTime? @db.Date
+  prize      String?
+  organizer  String?
+}
+
+model division {
+  division_id Int     @id @default(autoincrement())
+  name        String?
+}
+
+model division_members {
+  member_id   Int @id @default(autoincrement())
+  division_id Int @default(autoincrement())
+  user_id     Int @default(autoincrement())
+}
+
+model marks {
+  mark_id    Int    @id @default(autoincrement())
+  user_id    Int?
+  project_id Int?
+  score      Float? @db.Real
+  rated_at   Int?
+}
+
+model projects {
+  project_id  Int       @id @default(autoincrement())
+  title       String?
+  description String?
+  created_at  DateTime? @db.Date
+  division_id Int?
+  image_url   String?
+  category_id Int?
+  contest_id  Int?
+}
+
+model users {
+  user_id    Int     @id @default(autoincrement())
+  username   String? @unique
+  password   String?
+  email      String? @unique
+  first_name String?
+  last_name  String?
+  acc_status String?
+}
