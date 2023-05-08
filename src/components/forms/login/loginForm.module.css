@@ -1,0 +1,109 @@
+.input,
+.textarea,
+.button{
+  all: unset;
+  box-sizing: border-box;
+}
+
+.FormRoot {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.FormField {
+  display: grid;
+  margin-bottom: 10px;
+}
+
+.FormLabel {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 35px;
+  color: black;
+  padding-left: 15px;
+}
+
+.FormMessage {
+  font-size: 13px;
+  color: black;
+  opacity: 0.8;
+  padding-right: 15px;
+}
+
+.Input,
+.Textarea {
+  width: 90%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  font-size: 15px;
+  color: black;
+  background-color: #ececec;
+  box-shadow: 0 0 0 1px var(--blackA9);
+}
+.Input:hover,
+.Textarea:hover {
+  box-shadow: 0 0 0 1px black;
+}
+.Input:focus,
+.Textarea:focus {
+  box-shadow: 0 0 0 2px black;
+}
+.Input::selection,
+.Textarea::selection {
+  color: black;
+}
+
+.Input {
+  padding: 0 10px;
+  height: 35px;
+  line-height: 1;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.Textarea {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  resize: none;
+  padding: 10px;
+}
+
+.Button {
+  display: inline-flex;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+  height: 35px;
+  width: 75%;
+  color: white;
+  background-color: #2ba8fb;
+  box-shadow: 0 2px 10px var(--blackA7);
+  -webkit-transition: all 0.5s;
+}
+.Button:hover{
+    background-color: #6fc5ff;
+    box-shadow: 0 0 20px #6fc5ff50;
+}
+.Button:focus {
+    background-color: #3d94cf;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+}

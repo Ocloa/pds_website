@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 import Layout from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
+import Form from '../components/forms/login/loginForm'
 import { Inter } from 'next/font/google'
 
 
@@ -15,6 +15,7 @@ export default function Home() {
       <title>Home page</title>
       <link rel='icon' href='/favicon.ico'></link>
     </Head>
+    <Form></Form>
     <Link href="/login">check this page!</Link>
     </Layout>
   )
